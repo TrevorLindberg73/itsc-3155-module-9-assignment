@@ -11,7 +11,7 @@ movie_repository = get_movie_repository()
 def index():
     return render_template('index.html')
 
-
+#Testing
 @app.get('/movies')
 def list_all_movies():
     # TODO: Feature 1
@@ -33,4 +33,5 @@ def create_movie():
 @app.get('/movies/search')
 def search_movies():
     # TODO: Feature 3
+    print('')
     return render_template('search_movies.html', search_active=True)
