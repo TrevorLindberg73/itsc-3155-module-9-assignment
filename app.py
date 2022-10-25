@@ -33,8 +33,8 @@ def create_movie():
 @app.get('/movies/search')
 def search_movies():
     # TODO: Feature 3
-    return render_template('search_movies.html', rating = title, search_active=True)
+    return render_template('search_movies.html', rating = ratings, search_active=True)
 with app.test_request_context():
     title = request.args.get('search')
-    #mov = movie_repository.get_movie_by_title(title)
-    #ratings = title
+    mov = movie_repository.get_movie_by_title(title)
+    ratings = title
