@@ -39,4 +39,3 @@ def create_movie():
 def search_movies():
     # TODO: Feature 3
     return render_template('search_movies.html', search_active=True)
-app.run()
