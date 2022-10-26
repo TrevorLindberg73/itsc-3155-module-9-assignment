@@ -37,7 +37,7 @@ def create_movie():
     new_movie = movie_repository.create_movie(movie_title, movie_director,int(movie_rating))
     return redirect('/movies')
 
-default = movie_repository.create_movie('Spiderman', 'Sam Raimi', 3);
+default = movie_repository.create_movie('Spiderman', 'Sam Raimi', 3)
 @app.get('/movies/search')
 def search_movies():
     # TODO: Feature 3
