@@ -37,12 +37,12 @@ def create_movie():
     new_movie = movie_repository.create_movie(movie_title, movie_director,int(movie_rating))
     return redirect('/movies')
 
-
+default = movie_repository.create_movie('Spiderman', 'Sam Raimi', 3);
 @app.get('/movies/search')
 def search_movies():
     # TODO: Feature 3
-    return render_template('search_movies.html', rating = ratings, search_active=True)
-with app.test_request_context():
-    title = request.args.get('search')
+    #Completed by Trevor Lindberg
+    title = request.args.get('search', 'Spiderman')
     mov = movie_repository.get_movie_by_title(title)
     ratings = mov.rating
+    return render_template('search_movies.html', rating = ratings, search_active=True)
