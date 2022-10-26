@@ -37,4 +37,4 @@ def search_movies():
 with app.test_request_context():
     title = request.args.get('search')
     mov = movie_repository.get_movie_by_title(title)
-    ratings = title
+    ratings = mov.rating
