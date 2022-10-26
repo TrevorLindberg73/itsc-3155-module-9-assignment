@@ -11,11 +11,15 @@ movie_repository = get_movie_repository()
 def index():
     return render_template('index.html')
 
-#Testing
+
+
 @app.get('/movies')
 def list_all_movies():
     # TODO: Feature 1
-    return render_template('list_all_movies.html', list_movies_active=True)
+    # The line below was to make sure I was making a row for a new movie.
+    #new_movie = movie_repository.create_movie("a","b", 1)
+    movie_list = movie_repository.get_all_movies()
+    return render_template('list_all_movies.html', list_movies_active=True, movie_list = movie_list)
 
 
 @app.get('/movies/new')
@@ -26,7 +30,11 @@ def create_movies_form():
 @app.post('/movies')
 def create_movie():
     # TODO: Feature 2
-    # After creating the movie in the database, we redirect to the list all movies page
+    # Completed by Marcel Newman
+    movie_title =request.form.get('movie_title')
+    movie_director =request.form.get('movie_director')
+    movie_rating =request.form.get('movie_rating')
+    new_movie = movie_repository.create_movie(movie_title, movie_director,int(movie_rating))
     return redirect('/movies')
 
 

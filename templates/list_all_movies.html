@@ -6,4 +6,22 @@
 <h1 class="mb-5">All Movies</h1>
 <p class="mb-3">See our list of movie ratings below</p>
 <!-- TODO: Feature 1 -->
+<table style = "width:50%", border="2px solid black">
+    <thead>
+        <tr style="outline: thin solid">
+          <th tr style="outline: thin solid">Movie Name</th>
+          <th tr style="outline: thin solid">Director</th>
+          <th tr style="outline: thin solid">Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for movie in movie_list %}
+        <tr tr style="outline: thin solid">
+            <td tr style="outline: thin solid"> {{ movie.title }} </td>
+            <td tr style="outline: thin solid"> {{ movie.director }} </td>
+            <td tr style="outline: thin solid"> {{ movie.rating }} </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+</table>
 {% endblock %}
